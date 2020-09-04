@@ -1,4 +1,4 @@
-package cl.desafiolatam.superheroes.api
+package cl.desafiolatam.superheroes.model.api
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

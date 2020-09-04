@@ -1,4 +1,4 @@
-package cl.desafiolatam.superheroes.api
+package cl.desafiolatam.superheroes.model.api
 
 data class Images(
     val lg: String,
