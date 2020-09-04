@@ -6,25 +6,24 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 
 
-@Database(entities = [EntityHeroe::class],version = 1)
+@Database(entities = [EntityHeroe::class], version = 1)
 abstract class DataBaseHeroe : RoomDatabase() {
 
-    abstract fun getDaoHeroe() : DaoHeroe
+    abstract fun getDaoHeroe(): DaoHeroe
 
-    companion object{
+    companion object {
 
         @Volatile
-        private var INSTANCE : DataBaseHeroe? =  null
+        private var INSTANCE: DataBaseHeroe? = null
 
-        fun getDatabase(context: Context) : DataBaseHeroe {
+        fun getDatabase(context: Context): DataBaseHeroe {
             val tempInstance =
                 INSTANCE
-            if (tempInstance != null)
-            {
+            if (tempInstance != null) {
                 return tempInstance
             }
 
-            synchronized(this){
+            synchronized(this) {
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
                     DataBaseHeroe::class.java,
@@ -32,12 +31,7 @@ abstract class DataBaseHeroe : RoomDatabase() {
                 ).build()
                 INSTANCE = instance
                 return instance
-
             }
-
         }
-
     }
-
-
 }
