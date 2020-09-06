@@ -1,8 +1,10 @@
 package cl.desafiolatam.superheroes.view
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.RecyclerView
 import cl.desafiolatam.superheroes.R
 import cl.desafiolatam.superheroes.model.api.HeroeListMini
@@ -21,11 +23,21 @@ class AdapterHeroe (private var heroeDataset : MutableList<HeroeListMini>) :Recy
         return heroeDataset.size
     }
 
+    val heroeSelected = MutableLiveData<HeroeListMini>()
+
     override fun onBindViewHolder(holder: HeroeViewHolder, position: Int) {
         holder.textname.text = heroeDataset.get(position).name
         holder.textid.text = heroeDataset.get(position).id.toString()
         Picasso.get().load(heroeDataset.get(position).images_sm).into(holder.textView)
+
+        //funcion del click
+        holder.itemView.setOnClickListener{
+            Log.d("viewholder", "${heroeDataset.get(position)}")
+            heroeSelected.value = heroeDataset.get(position)
+        }
     }
+
+
 
     class HeroeViewHolder (itemView: View) : RecyclerView.ViewHolder(itemView){
 
