@@ -13,7 +13,7 @@ interface DaoHeroe {
     @Query("select * from heroe_table")
     fun getAllheroe() : LiveData<List<EntityHeroe>>
 
-    @Query("select id,name,images_sm from heroe_table")
+    @Query("select id,name,images_md from heroe_table")
     fun getMiniHeroe() :LiveData<List<HeroeListMini>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)

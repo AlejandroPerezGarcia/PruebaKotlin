@@ -28,7 +28,7 @@ class AdapterHeroe (private var heroeDataset : MutableList<HeroeListMini>) :Recy
     override fun onBindViewHolder(holder: HeroeViewHolder, position: Int) {
         holder.textname.text = heroeDataset.get(position).name
         holder.textid.text = heroeDataset.get(position).id.toString()
-        Picasso.get().load(heroeDataset.get(position).images_sm).into(holder.textView)
+        Picasso.get().load(heroeDataset.get(position).images_md).into(holder.textView)
 
         //funcion del click
         holder.itemView.setOnClickListener{
