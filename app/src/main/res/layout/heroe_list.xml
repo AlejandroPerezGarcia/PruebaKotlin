@@ -14,15 +14,13 @@
         android:id="@+id/textViewId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="180dp"
-        android:layout_marginTop="45dp"
-        android:layout_marginBottom="45dp"
+        android:layout_marginStart="10dp"
         android:text="TextView"
         android:textSize="22dp"
         android:textStyle="italic"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewImages"
+        app:layout_constraintStart_toEndOf="@+id/imageViewImages"
+        app:layout_constraintTop_toTopOf="@+id/imageViewImages" />
 
     <TextView
         android:id="@+id/textViewName"
@@ -32,7 +30,7 @@
         android:layout_marginTop="45dp"
         android:layout_marginBottom="45dp"
         android:text="TextView"
-        android:textSize="26dp"
+        android:textSize="24dp"
         android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="@+id/textViewId"
         app:layout_constraintStart_toEndOf="@+id/textViewId"
